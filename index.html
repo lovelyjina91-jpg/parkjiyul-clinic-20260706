@@ -4,148 +4,71 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
-<title>오답 클리닉 · 한지민 · 영핏 지나티처</title>
+<title>박지율 오답 클리닉 — 관사 &amp; 동사 과거형</title>
 <style>
-:root{
-  --bg1:#eef2f3; --bg2:#e2ebec; --card:#ffffff; --ink:#243137; --ink2:#52646d;
-  --teal:#2f7c83; --teal-d:#235e64; --teal-l:#e6f1f1; --line:#dbe4e5;
-  --ok:#2f8f6b; --okbg:#e7f4ee; --no:#c2603f; --nobg:#fbeae3; --shadow:0 6px 24px rgba(36,49,55,.08);
-}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;font-family:"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
-  background:linear-gradient(160deg,var(--bg1),var(--bg2));color:var(--ink);line-height:1.7;
-  min-height:100vh;padding:24px 14px 60px}
-.wrap{max-width:760px;margin:0 auto}
-.brand{text-align:center;margin-bottom:18px}
-.brand .logo{display:inline-flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.5px;
-  color:var(--teal-d);font-size:18px}
-.brand .logo .mk{width:30px;height:30px;border-radius:9px;background:var(--teal);color:#fff;
-  display:grid;place-items:center;font-size:15px;box-shadow:var(--shadow)}
-.brand .sub{color:var(--ink2);font-size:13px;margin-top:4px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);
-  padding:26px 22px;margin-bottom:18px}
-h1{font-size:21px;margin:0 0 6px}
-.meta{color:var(--ink2);font-size:13.5px;margin-bottom:18px}
-.tagrow{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 4px}
-.tag{background:var(--teal-l);color:var(--teal-d);border-radius:999px;padding:5px 12px;font-size:12.5px;font-weight:600}
-label.lab{display:block;font-weight:700;margin:18px 0 8px;font-size:15px}
-input.name{width:100%;padding:14px 16px;border:1.6px solid var(--line);border-radius:12px;font-size:16px;
-  outline:none;transition:.15s}
-input.name:focus{border-color:var(--teal)}
-.btn{display:inline-block;width:100%;border:none;border-radius:13px;padding:15px;font-size:16.5px;font-weight:800;
-  cursor:pointer;transition:.15s;background:var(--teal);color:#fff;box-shadow:var(--shadow)}
-.btn:hover{background:var(--teal-d)}
-.btn:disabled{background:#b7c5c7;cursor:not-allowed;box-shadow:none}
-.btn.ghost{background:#fff;color:var(--teal-d);border:1.6px solid var(--teal)}
-.btn.ghost:hover{background:var(--teal-l)}
-.hide{display:none}
-.progwrap{position:sticky;top:0;z-index:5;background:linear-gradient(160deg,var(--bg1),var(--bg2));
-  padding:8px 2px 12px;margin-bottom:6px}
-.progbar{height:9px;background:#d7e1e2;border-radius:99px;overflow:hidden}
-.progfill{height:100%;width:0;background:var(--teal);transition:width .3s}
-.progtxt{font-size:12.5px;color:var(--ink2);margin-top:6px;text-align:right}
-.q{scroll-margin-top:74px}
-.qhead{display:flex;align-items:center;gap:9px;margin-bottom:4px}
-.qno{flex:0 0 auto;width:30px;height:30px;border-radius:9px;background:var(--teal);color:#fff;font-weight:800;
-  display:grid;place-items:center;font-size:14.5px}
-.qorigin{font-size:12px;color:var(--teal-d);background:var(--teal-l);padding:3px 9px;border-radius:99px;font-weight:600}
-.passage{background:#f6f9f9;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:10px;
-  padding:13px 15px;margin:12px 0;font-size:15px}
-.passage u{text-decoration-color:var(--teal);text-underline-offset:3px;font-weight:700}
-.poster{background:#fff;border:1.5px dashed #b9cdcf;border-radius:10px;padding:12px 14px;margin:6px 0;
-  font-size:14.5px;line-height:1.65}
-.poster .pt{font-weight:800;text-align:center;font-size:15.5px;color:var(--teal-d);margin-bottom:6px}
-.prompt{font-size:16px;font-weight:600;margin:8px 0 14px}
-.choices{display:flex;flex-direction:column;gap:9px}
-.choice{display:flex;align-items:flex-start;gap:11px;border:1.6px solid var(--line);border-radius:12px;
-  padding:13px 15px;cursor:pointer;background:#fff;transition:.12s;font-size:15px}
-.choice:hover{border-color:var(--teal);background:var(--teal-l)}
-.choice .ix{flex:0 0 auto;width:24px;height:24px;border-radius:50%;border:1.6px solid var(--teal);color:var(--teal-d);
-  font-weight:800;display:grid;place-items:center;font-size:13px}
-.choice.picked{border-color:var(--teal);background:var(--teal-l)}
-.choice.picked .ix{background:var(--teal);color:#fff}
-.choice.lock{cursor:default;opacity:.96}
-.choice.correct{border-color:var(--ok);background:var(--okbg)}
-.choice.correct .ix{background:var(--ok);border-color:var(--ok);color:#fff}
-.choice.wrong{border-color:var(--no);background:var(--nobg)}
-.choice.wrong .ix{background:var(--no);border-color:var(--no);color:#fff}
-.expl{margin-top:14px;border-radius:12px;padding:14px 16px;font-size:14.5px;line-height:1.75}
-.expl.good{background:var(--okbg);border:1px solid #bfe2d3}
-.expl.bad{background:var(--nobg);border:1px solid #f0cdbe}
-.expl .vh{font-weight:800;margin-bottom:6px;display:flex;align-items:center;gap:7px}
-.result h2{font-size:22px;margin:0 0 4px}
-.scorebig{font-size:46px;font-weight:900;color:var(--teal-d);text-align:center;margin:8px 0}
-.scoresub{text-align:center;color:var(--ink2);margin-bottom:14px}
-#submit-status{text-align:center;font-size:14px;font-weight:600;margin:4px 0 12px;min-height:1.3em}
-.kakbox{background:#fef8e6;border:1px solid #f3e2a8;border-radius:13px;padding:15px;white-space:pre-wrap;
-  font-size:14px;line-height:1.65;margin:12px 0}
-.foot{text-align:center;color:var(--ink2);font-size:12.5px;margin-top:24px}
-.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);background:var(--ink);
-  color:#fff;padding:12px 22px;border-radius:99px;font-size:14px;opacity:0;transition:.25s;z-index:50;box-shadow:var(--shadow)}
-.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-.hintkey{font-size:12px;color:var(--ink2);margin-top:8px}
-/* ── 도표(그래프) ── */
-.chart{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 12px 12px;margin:4px 0 12px}
-.ctitle{text-align:center;font-weight:800;font-size:13.5px}
-.cunit{font-size:11px;color:var(--ink2);margin:2px 0 6px}
-.bars2{display:flex;align-items:flex-end;gap:10px;border-bottom:2px solid #9fb3b6;padding:0 4px}
-.grp{flex:1;display:flex;align-items:flex-end;justify-content:center;gap:3px}
-.gcol{display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
-.gv{font-size:10.5px;font-weight:700;color:var(--ink2);line-height:1.2;margin-bottom:1px}
-.gb{width:15px;border-radius:4px 4px 0 0}
-.gb.m{background:#a9c6ca}
-.gb.f{background:linear-gradient(180deg,#4b8d94,#2f7c83)}
-.names{display:flex;gap:10px;padding:0 4px;margin-top:5px}
-.names .n{flex:1;font-size:10.5px;color:var(--ink2);text-align:center;line-height:1.25;word-break:keep-all}
-.legend{display:flex;justify-content:center;gap:16px;font-size:11.5px;color:var(--ink2);margin-top:8px}
-.sw{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px;margin-right:4px}
-.sw.m{background:#a9c6ca}
-.sw.f{background:#2f7c83}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif; background: #f0f4f4; color: #2d3436; min-height: 100vh; display: flex; justify-content: center; padding: 20px 14px; }
+  .wrap { width: 100%; max-width: 520px; }
+  .card { background: #fff; border-radius: 16px; padding: 26px 22px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); margin-bottom: 14px; }
+  h1 { font-size: 1.25rem; color: #2e7d6e; margin-bottom: 6px; }
+  .sub { font-size: 0.88rem; color: #778; margin-bottom: 18px; line-height: 1.5; }
+  input[type=text] { width: 100%; padding: 13px; font-size: 1.05rem; border: 1.5px solid #cdd; border-radius: 10px; }
+  .btn { display: block; width: 100%; margin-top: 14px; padding: 14px; font-size: 1.05rem; font-weight: bold; color: #fff; background: #2e7d6e; border: none; border-radius: 10px; cursor: pointer; }
+  .btn:disabled { background: #b8c4c2; cursor: default; }
+  .progress { font-size: 0.85rem; color: #789; margin-bottom: 10px; }
+  .qtext { font-size: 1.05rem; line-height: 1.6; margin-bottom: 16px; font-weight: bold; }
+  .choice { display: block; width: 100%; text-align: left; padding: 13px 14px; margin-bottom: 9px; font-size: 1rem; background: #f6f9f8; border: 1.5px solid #dde5e3; border-radius: 10px; cursor: pointer; }
+  .choice:active { background: #e2efec; }
+  .num { color: #2e7d6e; font-weight: bold; margin-right: 6px; }
+  .score-big { font-size: 2rem; font-weight: bold; color: #2e7d6e; text-align: center; margin: 10px 0; }
+  #submit-status { text-align: center; font-size: 0.92rem; margin: 12px 0; min-height: 1.2em; }
+  .exp { background: #f6f9f8; border-left: 4px solid #2e7d6e; border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; font-size: 0.92rem; line-height: 1.55; }
+  .exp.wrong { border-left-color: #c0392b; }
+  .exp b { color: #2e7d6e; }
+  .exp.wrong b { color: #c0392b; }
+  .footer { text-align: center; font-size: 0.8rem; color: #99a; margin: 8px 0 24px; }
+  .hidden { display: none; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="brand">
-    <div class="logo"><span class="mk">영</span> 영핏 지나티처 · 오답 클리닉</div>
-    <div class="sub">초등 6학년 영어 · 안내문 일치 / 도표 일치 / 지칭 추론 변형문제</div>
+
+  <!-- 시작 화면 -->
+  <div class="card" id="start-card">
+    <h1>박지율 오답 클리닉 🌱</h1>
+    <p class="sub">관사(a / an / the) &amp; 일반동사 과거형 변형문제 · 총 40문항<br>
+    지난 시간에 틀렸던 문제들을 살짝 바꿔서 다시 내는 거예요.<br>
+    천천히, 정확하게! 이름을 입력하고 시작하세요.</p>
+    <input type="text" id="name-input" placeholder="이름을 입력하세요" maxlength="20" autocomplete="off">
+    <button class="btn" id="start-btn" disabled>시작하기</button>
   </div>
 
-  <!-- START -->
-  <div id="start" class="card">
-    <h1>한지민 학생 오답 클리닉 ✨</h1>
-    <div class="meta">시험에서 아쉬웠던 <b>18번(안내문) · 19번(도표) · 20번(지칭)</b> 세 문제를 다시 풀고,
-      문제마다 <b>변형문제 2개</b>씩으로 완전히 내 것으로 만들어요! (총 9문항)<br>
-      이번 핵심은 <b>twice a day(하루 두 번) 계산</b>, <b>배수 표현(twice/three times)</b>, <b>him·his가 가리키는 사람 찾기</b>예요 ✊</div>
-    <div class="tagrow">
-      <span class="tag">안내문 일치</span><span class="tag">도표 읽기</span>
-      <span class="tag">배수 표현</span><span class="tag">지칭 추론 (him/his)</span>
+  <!-- 문제 화면 -->
+  <div class="card hidden" id="quiz-card">
+    <div class="progress" id="progress"></div>
+    <div class="qtext" id="qtext"></div>
+    <div id="choices"></div>
+  </div>
+
+  <!-- 결과 화면 -->
+  <div class="card hidden" id="result-card">
+    <h1>수고했어요! 🎉</h1>
+    <div class="score-big" id="score-line"></div>
+    <div id="submit-status"></div>
+    <button class="btn" id="kakao-btn">지나티처에게 보낼 결과 복사 (백업용)</button>
+    <div style="margin-top:20px">
+      <p class="sub" style="margin-bottom:10px">📝 전체 해설 — 틀린 문제는 꼭 다시 읽어보세요!</p>
+      <div id="explanations"></div>
     </div>
-    <label class="lab" for="nm">먼저 이름을 입력해 주세요 ✍️</label>
-    <input id="nm" class="name" type="text" placeholder="이름 (예: 한지민)" autocomplete="off">
-    <div style="height:14px"></div>
-    <button id="startBtn" class="btn" disabled>시작하기</button>
-    <div class="hintkey">· 보기를 누르면 바로 채점되고 다음 문제로 넘어가요(숫자키 1~5도 가능). · 해설은 다 푼 뒤 한 번에 보여드려요.</div>
   </div>
 
-  <!-- QUIZ -->
-  <div id="quizArea" class="hide">
-    <div class="progwrap">
-      <div class="progbar"><div id="progfill" class="progfill"></div></div>
-      <div id="progtxt" class="progtxt"></div>
-    </div>
-    <div id="quiz"></div>
-    <button id="finishBtn" class="btn hide">채점하고 해설 보기</button>
-  </div>
-
-  <!-- RESULT -->
-  <div id="result" class="card result hide"></div>
-
-  <div class="foot">제공 · <b>영핏 지나티처</b> &nbsp;|&nbsp; 결과는 자동 전송 + 카카오톡 복사 💬</div>
+  <div class="footer">제공: 영핏 지나티처</div>
 </div>
-<div id="toast" class="toast"></div>
 
 <script>
-/* ══════ 결과 자동 전송 (영핏 공통 · 전송코드 v1) ══════ */
+"use strict";
+
+/* ══════ 결과 자동 전송 (영핏 공통) ══════ */
 var ENGFIT_SUBMIT_URL = "https://script.google.com/macros/s/AKfycbz5IC3cEtaBGW10qZhrjwtjdtGugmcmYb4ZTHS4k-1LOqTRYzW-LfoAPyFB_ShjAqNp/exec";
 
 async function engfitSubmit(r) {
@@ -166,412 +89,290 @@ var _engfitSent = false;
 async function engfitSubmitWithStatus(r) {
   if (_engfitSent) return; _engfitSent = true;
   var el = document.getElementById("submit-status");
-  if (el) { el.textContent = "결과 전송 중..."; el.style.color = "#888"; }
+  el.textContent = "결과 전송 중...";
+  el.style.color = "#888";
   var ok = await engfitSubmit(r);
-  if (el) {
-    if (ok) { el.textContent = "✓ 결과가 지나티처에게 자동 전송되었어요"; el.style.color = "#2e7d6e"; }
-    else { el.textContent = "전송이 안 됐어요 — 아래 버튼으로 복사해서 카톡으로 보내주세요!"; el.style.color = "#c0392b"; }
-  }
-  return ok;
+  if (ok) { el.textContent = "✓ 결과가 지나티처에게 자동 전송되었어요"; el.style.color = "#2e7d6e"; }
+  else { el.textContent = "전송이 안 됐어요 — 아래 버튼으로 복사해서 카톡으로 보내주세요!"; el.style.color = "#c0392b"; }
 }
 
-/* ══════ 그룹(남/여) 그래프 HTML ══════ */
-function chart2HTML(title, unit, max, rows){
-  var h = "<div class='chart'><div class='ctitle'>"+title+"</div><div class='cunit'>"+unit+"</div><div class='bars2'>";
-  rows.forEach(function(r){
-    var pm = Math.round(r[1]/max*140), pf = Math.round(r[2]/max*140);
-    h += "<div class='grp'>"+
-         "<div class='gcol'><div class='gv'>"+r[1]+"</div><div class='gb m' style='height:"+pm+"px'></div></div>"+
-         "<div class='gcol'><div class='gv'>"+r[2]+"</div><div class='gb f' style='height:"+pf+"px'></div></div>"+
-         "</div>";
-  });
-  h += "</div><div class='names'>";
-  rows.forEach(function(r){ h += "<div class='n'>"+r[0]+"</div>"; });
-  h += "</div><div class='legend'><span><span class='sw m'></span>Male</span><span><span class='sw f'></span>Female</span></div></div>";
-  return h;
-}
-var CH1 = chart2HTML("The Male-female Numbers of the Mogli University's Language Departments in 2013","(Number)",100,
-  [["Korean",46,54],["English",65,65],["French",32,98],["German",56,64],["Japanese",66,33],["Chinese",47,53]]);
-var CH2 = chart2HTML("Sports Club Members of Mogil Elementary School in 2026","(students)",80,
-  [["Soccer",80,20],["Basketball",45,45],["Badminton",30,60],["Swimming",25,75],["Tennis",40,48]]);
-var CH3 = chart2HTML("Favorite Subjects of Mogil Elementary School Students in 2026","(students)",90,
-  [["Math",60,30],["English",45,45],["Science",90,30],["Music",20,80],["Art",35,43]]);
+/* ══════ 문제 데이터 (원본 오답 1개당 유사문제 2개) ══════ */
+var QUESTIONS = [
 
-/* ══════ 문제 데이터 ══════ */
-var RAW = [
-{ num:"1", origin:"원본 18번 다시 풀기 · 안내문 일치", type:"mc", noshuffle:true,
-  passage:"<div class='poster'><div class='pt'>Don't Iron While the Strike Is Hot</div>"+
-    "This is a historic musical<br>"+
-    "– honoring Kate Mullany, a labor movement leader in the 1800's<br>"+
-    "– sponsored by the American Labor Studies Center<br>"+
-    "<b>When:</b> May 14th, 15th, 2015 — 10:30 a.m. &amp; 7:30 p.m. (twice a day)<br>"+
-    "<b>Where:</b> Baker Memorial Hall, Russel Saga College<br>"+
-    "<b>Tickets:</b> Adults $25, Students $15<br>"+
-    "All profits will be used to improve the National Museum of Labor.<br>"+
-    "For more information, call us at (472) 3232-5808.</div>",
-  prompt:"Don't Iron While the Strike Is Hot에 관한 안내문의 내용과 일치하지 <b>않는</b> 것은?",
-  choices:["노동 운동 지도자를 기리는 뮤지컬이다.","미국 노동 연구 센터가 후원한다.","이틀에 걸쳐서 총 두 차례 공연된다.","성인 입장권이 학생 입장권보다 10달러 더 비싸다.","수익금은 국립 노동 박물관을 개선하는 데 사용된다."],
-  answer:2,
-  explain:"정답은 <b>③ 이틀에 걸쳐서 총 두 차례 공연된다</b>예요!<br>"+
-    "안내문의 When을 보면 <b>May 14th, 15th(이틀)</b> 동안 <b>10:30 a.m. &amp; 7:30 p.m. (twice a day = 하루에 두 번)</b> 공연해요.<br>"+
-    "그러니까 하루 2회 × 2일 = <b>총 4회</b> 공연! ‘총 두 차례’가 아니라서 불일치예요 ✗<br>"+
-    "• ① honoring Kate Mullany, <b>a labor movement leader</b> → 노동 운동 지도자를 기리는(honoring) 뮤지컬 → 일치 ✓<br>"+
-    "• ② <b>sponsored by</b> the American Labor Studies Center → 미국 노동 연구 센터가 후원 → 일치 ✓ (sponsored by = ~가 후원하는)<br>"+
-    "• ④ Adults $25, Students $15 → 25−15=<b>10달러</b> 더 비쌈 → 일치 ✓<br>"+
-    "• ⑤ All profits will be used to <b>improve</b> the National Museum of Labor → 수익금 전부가 국립 노동 박물관 개선에 사용 → 일치 ✓<br>"+
-    "👉 지민아, 안내문 문제에서 <b>날짜가 2개 + twice a day</b>가 같이 나오면 꼭 <b>곱하기</b>로 총 횟수를 계산해요! 2일 × 2회 = 4회 🤙<br>"+
-    "📚 표현 정리: <b>honor</b> 기리다 / <b>sponsor</b> 후원하다 / <b>twice a day</b> 하루에 두 번 / <b>profit</b> 수익금 / <b>improve</b> 개선하다" },
+  /* ─ 과거형: -y로 끝나는 동사 ─ */
+  { q: "Jennifer ______ a new dish when she was in Bangkok. (try)",
+    choices: ["tried", "tryed", "tryd", "traied"], answer: "tried",
+    exp: "「자음 + y」로 끝나는 동사는 <b>y를 i로 바꾸고 -ed</b>를 붙여요. try → <b>tried</b>. 지난 시간에 tryed로 썼던 바로 그 함정이에요! (study → studied, carry → carried 도 같은 규칙)" },
+  { q: "Ben ______ the heavy box to the classroom yesterday. (carry)",
+    choices: ["carried", "carryed", "caried", "carryd"], answer: "carried",
+    exp: "carry도 「자음 + y」로 끝나니까 y → i + ed! 그래서 <b>carried</b>가 정답이에요. ※주의: play처럼 「모음 + y」로 끝나면 그냥 -ed만 붙여요 (played)." },
 
-{ num:"2", origin:"18번 변형 1 · 과학 캠프 안내문", type:"mc", noshuffle:false,
-  passage:"<div class='poster'><div class='pt'>Spring Science Camp</div>"+
-    "This is a fun science camp<br>"+
-    "– for students who love science experiments<br>"+
-    "– hosted by the Doram Youth Center<br>"+
-    "<b>When:</b> April 4th &amp; 5th, 2026 — 10:00 a.m. &amp; 2:00 p.m. (twice a day)<br>"+
-    "<b>Where:</b> Doram Youth Center, 2nd floor<br>"+
-    "<b>Fee:</b> Adults $20, Students $12<br>"+
-    "All profits will be donated to the Children's Science Museum.<br>"+
-    "For more information, call 032-1234-5678.</div>",
-  prompt:"Spring Science Camp에 관한 안내문의 내용과 일치하지 <b>않는</b> 것은?",
-  choices:["과학 실험을 좋아하는 학생들을 위한 캠프이다.","도람 청소년 센터가 주최한다.","이틀 동안 총 두 번 열린다.","성인 참가비가 학생 참가비보다 8달러 더 비싸다.","수익금은 어린이 과학 박물관에 기부된다."],
-  answer:2,
-  explain:"일치하지 않는 것은 <b>“이틀 동안 총 두 번 열린다.”</b>예요!<br>"+
-    "When: <b>April 4th &amp; 5th(이틀)</b> — 10:00 a.m. &amp; 2:00 p.m. <b>(twice a day, 하루 두 번)</b><br>"+
-    "→ 하루 2번 × 2일 = <b>총 4번</b> 열려요. 원본 18번과 똑같은 함정이죠? 😉<br>"+
-    "• for students who love science experiments → 실험을 좋아하는 학생 대상 ✓<br>"+
-    "• <b>hosted by</b> the Doram Youth Center → 도람 청소년 센터 주최 ✓ (hosted by = ~가 주최하는)<br>"+
-    "• Adults $20, Students $12 → 20−12=<b>8달러</b> 차이 ✓<br>"+
-    "• All profits will be <b>donated</b> to the Children's Science Museum → 어린이 과학 박물관에 기부 ✓<br>"+
-    "👉 <b>twice a day</b>를 보는 순간 “아! 총 횟수 = 날짜 수 × 2”라고 자동으로 떠올리기! 이게 이 유형의 열쇠예요 🔑<br>"+
-    "📚 표현 정리: <b>experiment</b> 실험 / <b>host</b> 주최하다 / <b>fee</b> 참가비 / <b>donate</b> 기부하다" },
+  /* ─ 과거형: 단모음+단자음 → 자음 겹치기 ─ */
+  { q: "An officer ______ me on the street. (stop)",
+    choices: ["stopped", "stoped", "stopt", "stopeed"], answer: "stopped",
+    exp: "「단모음 + 단자음」으로 끝나는 동사는 <b>마지막 자음을 한 번 더 쓰고 -ed</b>! stop → sto<b>pp</b>ed. p를 하나만 쓴 stoped가 지난번 오답이었죠?" },
+  { q: "She ______ her business trip last week. (plan)",
+    choices: ["planned", "planed", "pland", "plannd"], answer: "planned",
+    exp: "plan도 「단모음(a) + 단자음(n)」으로 끝나니까 n을 겹쳐서 <b>planned</b>! planed라고 쓰면 틀려요. (drop → dropped 도 같은 규칙)" },
 
-{ num:"3", origin:"18번 변형 2 · 영화의 밤 안내문", type:"mc", noshuffle:false,
-  passage:"<div class='poster'><div class='pt'>Family Movie Night</div>"+
-    "Enjoy a movie with your family!<br>"+
-    "– showing the animation <i>Ocean Friends</i><br>"+
-    "– sponsored by the Hanbit Library<br>"+
-    "<b>When:</b> August 8th, 2026 — 5:00 p.m. &amp; 8:00 p.m. (twice in one day)<br>"+
-    "<b>Where:</b> Hanbit Library Main Hall<br>"+
-    "<b>Tickets:</b> Adults $10, Children $5<br>"+
-    "Free popcorn will be given to every visitor.<br>"+
-    "All profits will be used to buy new books for the library.</div>",
-  prompt:"Family Movie Night에 관한 안내문의 내용과 일치하지 <b>않는</b> 것은?",
-  choices:["한빛 도서관이 후원하는 행사이다.","하루에 두 번 상영된다.","어린이 입장권은 성인 입장권의 절반 가격이다.","방문객 중 선착순 50명만 무료 팝콘을 받는다.","수익금은 도서관의 새 책을 사는 데 쓰인다."],
-  answer:3,
-  explain:"일치하지 않는 것은 <b>“방문객 중 선착순 50명만 무료 팝콘을 받는다.”</b>예요!<br>"+
-    "안내문에는 Free popcorn will be given to <b>every visitor</b> → <b>모든 방문객</b>에게 무료 팝콘을 준다고 했어요. ‘선착순 50명’이라는 말은 어디에도 없죠? 안내문에 <b>없는 내용을 슬쩍 끼워 넣는 것</b>도 단골 함정이에요 ✗<br>"+
-    "• <b>sponsored by</b> the Hanbit Library → 한빛 도서관 후원 ✓<br>"+
-    "• 5:00 p.m. &amp; 8:00 p.m. <b>(twice in one day)</b> → 하루(8월 8일)에 두 번 상영 ✓ — 이번엔 날짜가 하루뿐이니 총 2회가 맞아요!<br>"+
-    "• Adults $10, Children $5 → 5는 10의 <b>절반(half)</b> ✓<br>"+
-    "• All profits will be used to <b>buy new books</b> → 새 책 구입에 사용 ✓<br>"+
-    "👉 보기를 읽을 때는 <b>안내문에서 근거 문장을 손가락으로 짚으면서</b> 확인! 근거가 안 보이면 그 보기가 범인일 확률이 높아요 🕵️‍♀️<br>"+
-    "📚 표현 정리: <b>every visitor</b> 모든 방문객 / <b>half</b> 절반 / <b>be used to+동사원형</b> ~하는 데 사용되다" },
+  /* ─ 과거형: 규칙 -ed 철자 ─ */
+  { q: "It ______ a lot last night. (rain)",
+    choices: ["rained", "rainned", "raind", "rainn"], answer: "rained",
+    exp: "rain은 「모음 두 개(ai) + n」이라 자음을 겹치지 않고 그냥 -ed만 붙여요 → <b>rained</b>. rainned처럼 n을 두 번 쓰지 않도록 조심! (자음 겹치기는 stop처럼 짧은 단모음일 때만)" },
+  { q: "Everyone ______ at his funny joke. (laugh)",
+    choices: ["laughed", "laughd", "laught", "laughhed"], answer: "laughed",
+    exp: "laugh는 규칙동사라서 그대로 <b>-ed</b>만 붙이면 끝! laugh → <b>laughed</b>. e를 빼먹은 laughd가 지난번 실수였어요. (stay → stayed, cook → cooked 도 마찬가지)" },
 
-{ num:"4", origin:"원본 19번 다시 풀기 · 도표 일치", type:"mc", noshuffle:true,
-  passage: CH1 + "<i>The graph above shows the number of male and female students in the Mogli University's language departments in 2013.</i>",
-  prompt:"다음 도표의 내용과 일치하지 <b>않는</b> 것은?",
-  choices:[
-    "According to the graph, you can see that four language departments had more female students than male students.",
-    "The number of female students was over three times more than that of male students in the French Department.",
-    "The Japanese Department had twice as many female students as male students.",
-    "The English Department had an equal number of males and females.",
-    "The German Department as well as the Korean Department had eight more female students."],
-  answer:2,
-  explain:"정답은 <b>③ The Japanese Department had twice as many female students as male students.</b>예요!<br>"+
-    "그래프에서 일본어학과(Japanese)는 <b>남학생 66명, 여학생 33명</b>. 즉 <b>남학생이 여학생의 2배</b>인데, 문장은 거꾸로 “여학생이 남학생의 2배(twice as many <b>female</b> students as <b>male</b> students)”라고 했으니 불일치 ✗<br>"+
-    "• ① 여학생이 더 많은 학과: Korean(54&gt;46), French(98&gt;32), German(64&gt;56), Chinese(53&gt;47) → 딱 <b>4개</b> ✓<br>"+
-    "• ② 프랑스어학과: 여 98 vs 남 32 → 32×3=96이고 98은 96보다 크니까 <b>3배 넘게(over three times)</b> 맞음 ✓<br>"+
-    "• ④ 영어학과: 남 65 = 여 65 → <b>equal(같은)</b> ✓<br>"+
-    "• ⑤ 독일어학과 64−56=<b>8명</b>, 한국어학과 54−46=<b>8명</b> → 둘 다 여학생이 8명 더 많음 ✓ (as well as = ~뿐만 아니라)<br>"+
-    "👉 지민아, 배수 표현이 나오면 <b>‘누가 누구의 몇 배인지’ 방향</b>을 꼭 확인해요! twice as many A as B = <b>A가 B의 2배</b>. 그래프에서 A와 B 숫자를 찾아 진짜로 2배인지 계산! 🧮<br>"+
-    "📚 표현 정리: <b>twice as many A as B</b> B의 2배만큼 많은 A / <b>over three times</b> 3배 넘게 / <b>equal</b> 같은 / <b>A as well as B</b> B뿐만 아니라 A도" },
+  /* ─ 과거형: 불규칙 동사 ─ */
+  { q: "Birds ______ in the sky this morning. (fly)",
+    choices: ["flew", "flyed", "flied", "flowed"], answer: "flew",
+    exp: "fly는 <b>불규칙 동사</b>라서 -ed를 붙이면 안 돼요! fly → <b>flew</b> → flown. flyed는 존재하지 않는 단어랍니다. 불규칙 동사는 통째로 외우는 게 답이에요." },
+  { q: "She ______ \"I love you\" and kissed me on the cheek. (say)",
+    choices: ["said", "sayed", "saied", "sayd"], answer: "said",
+    exp: "say도 불규칙 동사! say → <b>said</b>(발음: 세드). y로 끝난다고 sayed나 saied로 바꾸면 안 돼요. (make → made, go → went 처럼 자주 나오는 불규칙은 꼭 암기!)" },
 
-{ num:"5", origin:"19번 변형 1 · 스포츠 클럽 도표", type:"mc", noshuffle:false,
-  passage: CH2 + "<i>The graph above shows the number of male and female students in each sports club of Mogil Elementary School in 2026.</i>",
-  prompt:"다음 도표의 내용과 일치하지 <b>않는</b> 것은?",
-  choices:[
-    "The Badminton Club had twice as many female students as male students.",
-    "The number of female students in the Swimming Club was three times that of male students.",
-    "The Basketball Club had an equal number of males and females.",
-    "The number of male students in the Soccer Club was more than three times that of female students.",
-    "The Tennis Club had ten more female students than male students."],
-  answer:4,
-  explain:"일치하지 않는 것은 <b>“The Tennis Club had ten more female students than male students.”</b>예요!<br>"+
-    "테니스 클럽: 여 48 − 남 40 = <b>8명</b> 차이. ‘10명(ten) 더 많다’고 했으니 불일치 ✗ 숫자 하나 차이도 끝까지 빼기 계산으로 확인!<br>"+
-    "• 배드민턴: 여 60 = 남 30의 <b>2배(twice)</b> ✓<br>"+
-    "• 수영: 여 75 = 남 25의 <b>3배(three times)</b> ✓<br>"+
-    "• 농구: 남 45 = 여 45 → <b>equal</b> ✓<br>"+
-    "• 축구: 남 80 vs 여 20 → 20×3=60이고 80&gt;60이니까 <b>3배 넘게(more than three times)</b> ✓<br>"+
-    "👉 도표 문제 푸는 순서: ① 보기에서 <b>숫자·배수 표현</b>에 동그라미 → ② 그래프에서 두 숫자 찾기 → ③ <b>계산해서 비교</b>. 눈대중 금지! ✍️<br>"+
-    "📚 표현 정리: <b>three times</b> 3배 / <b>more than</b> ~보다 많은(넘는) / <b>ten more A than B</b> B보다 10명 더 많은 A" },
+  /* ─ 과거형: 올바른 문장 고르기 ─ */
+  { q: "어법상 올바른 문장을 고르세요.",
+    choices: ["They played baseball after school.", "They plaied baseball after school.", "They playd baseball after school.", "They plays baseball after school yesterday."], answer: "They played baseball after school.",
+    exp: "play는 「모음(a) + y」로 끝나서 y를 그대로 두고 -ed만 붙여요 → <b>played</b>. plaied(×)는 「자음+y」 규칙을 잘못 적용한 거예요. try(자음+y) → tried와 헷갈리지 않기!" },
+  { q: "어법상 올바른 문장을 고르세요.",
+    choices: ["My mom cooked steak last night.", "My mom cookd steak last night.", "My mom cooks steak last night.", "My mom cooken steak last night."], answer: "My mom cooked steak last night.",
+    exp: "last night(어젯밤)이 있으니 과거형! cook은 규칙동사라 <b>cooked</b>가 정답이에요. cookd처럼 e를 빼먹지 않도록 주의하세요." },
 
-{ num:"6", origin:"19번 변형 2 · 좋아하는 과목 도표", type:"mc", noshuffle:false,
-  passage: CH3 + "<i>The graph above shows the favorite subjects of the boys and girls at Mogil Elementary School in 2026. (Male = boys, Female = girls)</i>",
-  prompt:"다음 도표의 내용과 일치하지 <b>않는</b> 것은?",
-  choices:[
-    "Twice as many boys as girls chose Math.",
-    "The number of boys who chose Science was over three times that of girls.",
-    "An equal number of boys and girls chose English.",
-    "Four times as many girls as boys chose Music.",
-    "Eight more girls than boys chose Art."],
-  answer:1,
-  explain:"일치하지 않는 것은 <b>“The number of boys who chose Science was over three times that of girls.”</b>예요!<br>"+
-    "과학(Science): 남 90, 여 30 → 30×3=<b>90</b>. 남학생 수는 여학생의 <b>딱 3배</b>이지, 3배를 <b>넘는(over)</b> 게 아니에요! ✗<br>"+
-    "원본 19번의 ②에서는 98&gt;96이라 ‘over three times’가 맞았지만, 여기서는 90=90이라 틀려요. <b>over(넘게)가 붙으면 ‘초과’</b>, 같으면 안 된다는 것— 이게 오늘의 포인트! 🎯<br>"+
-    "• 수학: 남 60 = 여 30의 <b>2배</b> ✓<br>"+
-    "• 영어: 남 45 = 여 45 → <b>equal</b> ✓<br>"+
-    "• 음악: 여 80 = 남 20의 <b>4배(four times)</b> ✓<br>"+
-    "• 미술: 여 43 − 남 35 = <b>8명</b> 더 많음 ✓<br>"+
-    "👉 <b>three times(정확히 3배)</b> vs <b>over three times(3배 초과)</b> — 등호(=)냐 부등호(&gt;)냐의 차이예요. 시험에서 아주 좋아하는 함정! 🧮<br>"+
-    "📚 표현 정리: <b>over</b> ~을 넘는(초과) / <b>four times</b> 4배 / <b>choose(chose)</b> 고르다(골랐다)" },
+  /* ─ 어순 배열: ~에 있는 …을 가져다줘 ─ */
+  { q: "「그 소파에 있는 상자를 나에게 가져다 주세요.」 올바른 문장은?",
+    choices: ["Please bring me the box on that sofa.", "Please bring the box me on that sofa.", "Please bring me on that sofa the box.", "Please me bring the box on that sofa."], answer: "Please bring me the box on that sofa.",
+    exp: "「bring + 사람 + 물건」 순서예요! <b>bring me the box</b>(나에게 상자를 가져다줘) 그리고 꾸며주는 말 <b>on that sofa</b>(그 소파에 있는)는 box 바로 뒤에 붙여요." },
+  { q: "「그 의자 위에 있는 가방을 나에게 건네줘.」 올바른 문장은?",
+    choices: ["Please pass me the bag on that chair.", "Please pass the bag me on that chair.", "Please pass me on that chair the bag.", "Please the bag pass me on that chair."], answer: "Please pass me the bag on that chair.",
+    exp: "pass도 bring처럼 「pass + 사람 + 물건」 순서! <b>pass me the bag</b>, 그리고 위치 표현 on that chair는 bag 뒤에. 어순 공식: <b>동사 + 사람 + 물건 + 꾸미는 말</b>" },
 
-{ num:"7", origin:"원본 20번 다시 풀기 · 지칭 추론", type:"mc", noshuffle:true,
-  passage:"As a gesture of respect after a long political struggle, Mahatma Gandhi sent a pair of sandals to ① <u>his</u> adversary Prime Minister Jan Smuts of South Africa. He had made them in prison, where Smuts had sent ② <u>him</u>. Smuts came to wear them every summer — proudly. On the occasion of Gandhi's seventieth birthday, Smuts returned the sandals to ③ <u>him</u> with a note. It said, “I feel that I am not worthy to stand in the shoes of so great a man.” Finally, Gandhi got recognition from ④ <u>his</u> political enemy. In addition, Gandhi turned ⑤ <u>him</u> into a friend and admirer.<br><span style='font-size:12.5px;color:#52646d'>*adversary: 적수 &nbsp;**recognition: 인정</span>",
-  prompt:"밑줄 친 부분이 가리키는 대상이 나머지 넷과 <b>다른</b> 것은?",
-  choices:[
-    "his — …sent a pair of sandals to <u>his</u> adversary",
-    "him — …where Smuts had sent <u>him</u>",
-    "him — …returned the sandals to <u>him</u> with a note",
-    "his — …got recognition from <u>his</u> political enemy",
-    "him — …turned <u>him</u> into a friend and admirer"],
-  answer:4,
-  explain:"정답은 <b>⑤ him</b>이에요! ⑤만 <b>스머츠(Smuts)</b>, 나머지 넷은 모두 <b>간디(Gandhi)</b>를 가리켜요.<br>"+
-    "이야기 정리: 간디가 감옥에서 직접 만든 샌들을 정치적 적수였던 스머츠 수상에게 선물 → 스머츠는 그 샌들을 아껴 신다가 간디의 70번째 생일에 “위대한 분의 신발에 설 자격이 없다”는 쪽지와 함께 돌려줌 → 적이 친구이자 팬이 된 감동 스토리 💕<br>"+
-    "• ① <u>his</u> adversary = <b>간디의</b> 적수(스머츠) → his는 간디 ✓<br>"+
-    "• ② Smuts had sent <u>him</u> (to prison) = 스머츠가 감옥에 보낸 사람 = <b>간디</b> ✓<br>"+
-    "• ③ Smuts returned the sandals to <u>him</u> = 샌들을 돌려받은 사람 = 처음 선물한 <b>간디</b> ✓<br>"+
-    "• ④ Gandhi got recognition from <u>his</u> political enemy = <b>간디의</b> 정치적 적(스머츠)에게서 인정받음 → his는 간디 ✓<br>"+
-    "• ⑤ Gandhi turned <u>him</u> into a friend = 간디가 친구로 만든 사람 = 정치적 적이었던 <b>스머츠</b> ✗ (다른 대상!)<br>"+
-    "👉 지칭 문제 꿀팁: 밑줄마다 <b>‘이 동작을 받는 사람이 누구지?’</b>를 문장 안에서 따져요. 특히 소유격 <b>his(~의)</b>는 ‘누구의 것/누구의 사람’인지를 묻는 거예요!<br>"+
-    "📚 표현 정리: <b>gesture of respect</b> 존경의 표시 / <b>turn A into B</b> A를 B로 바꾸다 / <b>admirer</b> 팬, 숭배자" },
+  /* ─ 관사: a + piece of ─ */
+  { q: "I need ______ piece of paper.",
+    choices: ["a", "an", "the", "x (관사 없음)"], answer: "a",
+    exp: "piece는 자음 소리 [p]로 시작하니까 <b>a piece</b>! 「종이 한 장」은 <b>a piece of paper</b>라고 세요. paper 자체는 셀 수 없어서 piece(조각)를 빌려서 세는 거예요." },
+  { q: "Can I have ______ glass of water?",
+    choices: ["a", "an", "the", "x (관사 없음)"], answer: "a",
+    exp: "water(물)는 셀 수 없으니 <b>a glass of water</b>(물 한 잔)처럼 단위로 세요. glass는 자음 소리로 시작하니 a! (a cup of tea, a piece of paper 도 같은 패턴)" },
 
-{ num:"8", origin:"20번 변형 1 · 민수와 할아버지", type:"mc", noshuffle:true,
-  passage:"Minsu and his grandfather love fishing together. Last Sunday, Grandfather took ① <u>him</u> to the river early in the morning. When Minsu caught his first fish, Grandfather praised ② <u>him</u> proudly. Later, Minsu's fishing line got stuck in a tree, and Grandfather helped ③ <u>him</u> untie it. On the way home, Minsu carried the heavy bag for ④ <u>him</u> because Grandfather looked very tired. That evening, Mom cooked a special dinner for ⑤ <u>him</u> to celebrate his first catch.",
-  prompt:"밑줄 친 부분이 가리키는 대상이 나머지 넷과 <b>다른</b> 것은?",
-  choices:[
-    "him — Grandfather took <u>him</u> to the river",
-    "him — Grandfather praised <u>him</u> proudly",
-    "him — Grandfather helped <u>him</u> untie it",
-    "him — Minsu carried the heavy bag for <u>him</u>",
-    "him — Mom cooked a special dinner for <u>him</u>"],
-  answer:3,
-  explain:"정답은 <b>④ him</b>! ④만 <b>할아버지</b>, 나머지 넷은 모두 <b>민수</b>를 가리켜요.<br>"+
-    "• ① Grandfather took <u>him</u> to the river = 할아버지가 강에 <b>데려간</b> 사람 = <b>민수</b> ✓<br>"+
-    "• ② praised <u>him</u> = 첫 물고기를 잡아서 <b>칭찬받은</b> 사람 = <b>민수</b> ✓<br>"+
-    "• ③ helped <u>him</u> untie it = 낚싯줄이 나무에 걸려서 <b>도움받은</b> 사람 = <b>민수</b> ✓<br>"+
-    "• ④ Minsu carried the heavy bag for <u>him</u> = 민수가 ‘그를 위해’ 가방을 들어줬어요. 바로 뒤에 because <b>Grandfather</b> looked very tired(할아버지가 피곤해 보여서)라는 힌트! → <b>할아버지</b> ✗<br>"+
-    "• ⑤ Mom cooked for <u>him</u> to celebrate <b>his first catch</b> = ‘첫 물고기’를 잡은 사람의 축하 저녁 = <b>민수</b> ✓<br>"+
-    "👉 꿀팁: 밑줄 <b>앞뒤의 because, to+동사(~하려고)</b> 같은 이유·목적 표현이 결정적 힌트가 돼요. ④는 because 뒤에 답(Grandfather)이 그대로 있었죠? 😉<br>"+
-    "📚 표현 정리: <b>praise</b> 칭찬하다 / <b>get stuck</b> 걸리다, 끼이다 / <b>untie</b> (매듭을) 풀다 / <b>catch</b> 잡은 것" },
+  /* ─ 관사: the flu / in the hospital ─ */
+  { q: "He has ______ flu and is in the hospital now.",
+    choices: ["the", "a", "an", "x (관사 없음)"], answer: "the",
+    exp: "독감은 특별하게 <b>the flu</b>라고 써요! 병 이름 중에서 flu는 the를 붙이는 대표 단어예요. 「병원에 입원 중」도 <b>in the hospital</b>로 the를 써요." },
+  { q: "My grandma was in ______ hospital for a week after the accident.",
+    choices: ["the", "a", "an", "x (관사 없음)"], answer: "the",
+    exp: "「(치료받으러) 병원에 입원해 있다」는 <b>in the hospital</b>! 사고 후 일주일 동안 입원했다는 뜻이에요. the를 빼면 어색한 문장이 된답니다." },
 
-{ num:"9", origin:"20번 변형 2 · 준호와 아빠", type:"mc", noshuffle:true,
-  passage:"Dad promised to build a treehouse with Junho during the summer vacation. Every evening, Junho waited for ① <u>him</u> to come home from work. On the first weekend, Dad taught ② <u>him</u> how to use a hammer safely. When Dad's face got sweaty under the hot sun, Junho brought ③ <u>him</u> a bottle of cold water. Two weeks later, the treehouse was finally finished, and Junho invited ④ <u>him</u> to the first sleepover in it. That night, Junho told ⑤ <u>him</u> that it was the best summer ever.",
-  prompt:"밑줄 친 부분이 가리키는 대상이 나머지 넷과 <b>다른</b> 것은?",
-  choices:[
-    "him — Junho waited for <u>him</u> to come home",
-    "him — Dad taught <u>him</u> how to use a hammer",
-    "him — Junho brought <u>him</u> a bottle of cold water",
-    "him — Junho invited <u>him</u> to the first sleepover",
-    "him — Junho told <u>him</u> that it was the best summer"],
-  answer:1,
-  explain:"정답은 <b>② him</b>! ②만 <b>준호</b>, 나머지 넷은 모두 <b>아빠</b>를 가리켜요.<br>"+
-    "• ① Junho waited for <u>him</u> to come home <b>from work</b> = 회사에서 집으로 오는 사람 = <b>아빠</b> ✓<br>"+
-    "• ② <b>Dad</b> taught <u>him</u> = 아빠가 망치 쓰는 법을 <b>가르쳐 준</b> 상대 = <b>준호</b> ✗ (다른 대상!)<br>"+
-    "• ③ Junho brought <u>him</u> cold water = 뜨거운 해 아래 <b>땀 흘린</b>(Dad's face got sweaty) 사람 = <b>아빠</b> ✓<br>"+
-    "• ④ Junho invited <u>him</u> = 준호가 첫 캠핑(sleepover)에 <b>초대한</b> 사람 = <b>아빠</b> ✓<br>"+
-    "• ⑤ Junho told <u>him</u> = 준호가 ‘최고의 여름’이라고 <b>말해 준 상대</b> = <b>아빠</b> ✓<br>"+
-    "👉 꿀팁: <b>주어가 하는 동작을 받는 사람이 him</b>이에요. ‘Dad taught him’처럼 주어가 Dad면 him은 Dad가 아닌 <b>다른 사람</b>일 수밖에 없죠! (자기 자신이면 himself를 써요)<br>"+
-    "📚 표현 정리: <b>promise to+동사</b> ~하기로 약속하다 / <b>how to+동사</b> ~하는 방법 / <b>sweaty</b> 땀에 젖은 / <b>sleepover</b> 자고 가는 것(하룻밤 캠핑)" }
+  /* ─ 관사: 운동 경기는 무관사, 공은 a ─ */
+  { q: "I bought ______ soccer ball and played ______ soccer with my brother. (순서대로)",
+    choices: ["a — x (관사 없음)", "the — the", "x (관사 없음) — a", "an — the"], answer: "a — x (관사 없음)",
+    exp: "축구공은 셀 수 있는 물건이니 <b>a soccer ball</b>, 하지만 운동 경기 이름 앞에는 관사를 안 써요 → <b>play soccer</b>! 「play + 운동」은 언제나 무관사예요. (play tennis, play basketball)" },
+  { q: "Alex played ______ badminton with her sister yesterday.",
+    choices: ["x (관사 없음)", "a", "an", "the"], answer: "x (관사 없음)",
+    exp: "badminton도 운동 경기니까 관사 없이 <b>play badminton</b>! 「play + 운동경기」에는 a/an/the를 붙이지 않아요. ※악기는 반대로 the를 붙여요: play the piano 🎹" },
+
+  /* ─ 관사: by + 교통/통신 수단 ─ */
+  { q: "I sent the picture by ______ email.",
+    choices: ["x (관사 없음)", "the", "a", "an"], answer: "x (관사 없음)",
+    exp: "「by + 수단」에는 관사를 쓰지 않아요! <b>by email</b>(이메일로), by mail(우편으로), by phone(전화로). by 뒤에 the나 a가 들어가면 틀린답니다." },
+  { q: "She goes to school by ______ bus.",
+    choices: ["x (관사 없음)", "the", "a", "an"], answer: "x (관사 없음)",
+    exp: "교통수단도 마찬가지! <b>by bus</b>, by train, by car — 전부 관사 없이 써요. 「그녀는 버스로 학교에 간다」 = She goes to school <b>by bus</b>. ※단, get off <b>the</b> bus(버스에서 내리다)처럼 by가 없으면 the를 쓸 수 있어요." },
+
+  /* ─ 관사: go to bed vs. the bed ─ */
+  { q: "I go to ______ bed at 10 p.m. every day.",
+    choices: ["x (관사 없음)", "the", "a", "an"], answer: "x (관사 없음)",
+    exp: "「잠자리에 들다」는 <b>go to bed</b> — 관사 없이! 여기서 bed는 가구가 아니라 「잠」이라는 목적을 뜻하기 때문이에요. (go to school 「공부하러 학교 가다」도 같은 원리)" },
+  { q: "She went to ______ bed to find her phone.",
+    choices: ["the", "a", "an", "x (관사 없음)"], answer: "the",
+    exp: "이번엔 잠자러 간 게 아니라 <b>핸드폰을 찾으러 그 침대로</b> 간 거죠? 특정한 가구(침대)로 간 거니까 <b>the bed</b>! 목적이 「잠」이면 go to bed, 물건으로서의 침대면 the bed — 이 차이가 핵심이에요." },
+
+  /* ─ 관사: 과목명 무관사 vs. a class ─ */
+  { q: "I'm going to take ______ science this semester.",
+    choices: ["x (관사 없음)", "a", "an", "the"], answer: "x (관사 없음)",
+    exp: "과목 이름(science, math, English...) 앞에는 관사를 쓰지 않아요! <b>take science</b>(과학 과목을 듣다). a science라고 쓰면 틀려요 — 지난번에 헷갈렸던 부분이죠?" },
+  { q: "He took ______ physics class this morning.",
+    choices: ["a", "an", "the", "x (관사 없음)"], answer: "a",
+    exp: "이번엔 physics(과목)가 아니라 <b>class(수업)</b>를 세는 거예요! class는 셀 수 있는 명사라서 <b>a physics class</b>(물리 수업 하나). 과목명 단독이면 무관사, 「~수업」이면 a class!" },
+
+  /* ─ 관사: 서로 아는 것 the ─ */
+  { q: "Sumin, pass me ______ salt, please.",
+    choices: ["the", "a", "an", "x (관사 없음)"], answer: "the",
+    exp: "식탁 위에 있는 <b>바로 그 소금</b>, 말하는 사람도 듣는 사람도 뭔지 알죠? 서로 알고 있는 물건에는 <b>the</b>를 써요. pass me the salt는 식탁 회화의 단골 표현!" },
+  { q: "It's hot in here. Can you open ______ window?",
+    choices: ["the", "a", "an", "x (관사 없음)"], answer: "the",
+    exp: "방에 있는 <b>그 창문</b> — 둘 다 어느 창문인지 아니까 <b>the window</b>! 이렇게 상황상 서로 아는 물건이면 처음 말해도 the를 쓸 수 있어요." },
+
+  /* ─ 관사: 식사 이름 무관사 ─ */
+  { q: "I ate a sandwich for ______ breakfast.",
+    choices: ["x (관사 없음)", "a", "an", "the"], answer: "x (관사 없음)",
+    exp: "식사 이름(breakfast, lunch, dinner) 앞에는 관사를 쓰지 않아요! <b>for breakfast</b>(아침 식사로). 샌드위치는 a sandwich로 세지만 식사 이름은 무관사 — 비교해서 기억하세요." },
+  { q: "I ______ with my mom at the new restaurant.",
+    choices: ["had lunch", "had a lunch", "had the lunch", "had an lunch"], answer: "had lunch",
+    exp: "「점심을 먹었다」는 <b>had lunch</b> — 관사 없이! have breakfast, have lunch, have dinner 모두 무관사예요. had a lunch는 콩글리시 함정!" },
+
+  /* ─ 관사: 세상에 하나뿐인 것 the ─ */
+  { q: "______ sun rises in ______ east. (순서대로)",
+    choices: ["The — the", "A — the", "The — an", "x (관사 없음) — the"], answer: "The — the",
+    exp: "태양, 달, 지구, 하늘, 동서남북처럼 <b>세상에 하나뿐인 것</b>에는 the! <b>The sun rises in the east.</b>(태양은 동쪽에서 떠오른다) 문장 맨 앞이니 대문자 The도 잊지 마세요." },
+  { q: "______ moon moves around ______ earth. (순서대로)",
+    choices: ["The — the", "A — the", "The — a", "An — the"], answer: "The — the",
+    exp: "달도 지구도 하나뿐! → <b>The moon moves around the earth.</b> 유일한 자연물(the sun, the moon, the earth, the sky, the sea)은 몽땅 the와 단짝이에요." },
+
+  /* ─ 관사: 첫 언급 a → 재언급 The (대문자 주의) ─ */
+  { q: "Yesterday, I bought a dress. ______ dress was very cheap.",
+    choices: ["The", "the", "A", "An"], answer: "The",
+    exp: "처음 말할 땐 <b>a dress</b>, 다시 말할 땐 <b>the dress</b>! 그런데 여기는 <b>문장의 첫 단어</b>라서 대문자 <b>The</b>로 써야 해요. 소문자 the를 고르면 아깝게 틀린답니다 — 지난번 실수 포인트!" },
+  { q: "Today I saw a girl on the street. ______ girl was wearing brown shoes.",
+    choices: ["The", "A", "the", "An"], answer: "The",
+    exp: "첫 문장에서 a girl로 소개했으니, 두 번째 문장의 그 소녀는 <b>the girl</b>. 문장 맨 앞이니까 대문자 <b>The</b>! 「첫 언급 a → 재언급 the + 문장 처음엔 대문자」 세트로 기억해요." },
+
+  /* ─ 관사: the only / the same / the capital ─ */
+  { q: "Cindy is ______ only girl in the rock band.",
+    choices: ["the", "a", "an", "x (관사 없음)"], answer: "the",
+    exp: "<b>only(유일한)</b> 앞에는 항상 the! 유일한 건 딱 하나로 정해져 있으니까요. <b>the only girl</b>(유일한 여자아이), the only student, the only way — 모두 the!" },
+  { q: "Seoul is ______ capital city of Korea.",
+    choices: ["the", "a", "an", "x (관사 없음)"], answer: "the",
+    exp: "한 나라의 수도는 하나뿐이죠? 그래서 <b>the capital city of Korea</b>! only, same, first, capital처럼 「하나로 정해지는 말」 앞에는 the를 써요. (the same school 「같은 학교」도 마찬가지)" },
+
+  /* ─ 관사: 나라 이름 ─ */
+  { q: "Have you been to ______ USA?",
+    choices: ["the", "a", "an", "x (관사 없음)"], answer: "the",
+    exp: "나라 이름은 보통 관사가 없지만, <b>USA처럼 여러 주(州)가 합쳐진 이름은 the</b>를 붙여요! the USA, the UK, the Philippines. 「미국 가 본 적 있니?」 = Have you been to <b>the USA</b>?" },
+  { q: "I lived in ______ America a year ago.",
+    choices: ["x (관사 없음)", "the", "a", "an"], answer: "x (관사 없음)",
+    exp: "America, Korea, England 같은 보통 나라·지역 이름에는 관사를 쓰지 않아요! <b>in America</b>. ※the England는 틀린 표현이에요. the USA(연합 국가)와 구분해서 기억하기!" },
+
+  /* ─ 관사: an + 모음 소리 ─ */
+  { q: "I have ______ old watch. It was my grandpa's.",
+    choices: ["an", "a", "the", "x (관사 없음)"], answer: "an",
+    exp: "watch는 자음으로 시작하지만, 앞에 붙은 <b>old가 모음 소리 [오]로 시작</b>하죠? 관사는 바로 뒤 단어의 <b>소리</b>를 따라가요 → <b>an old watch</b>!" },
+  { q: "The teacher gave the students only ______ hour for the exam.",
+    choices: ["an", "a", "the", "x (관사 없음)"], answer: "an",
+    exp: "hour는 h를 발음하지 않아서 [아워] — <b>모음 소리</b>로 시작해요! 그래서 <b>an hour</b>. 철자가 아니라 <b>소리</b>로 a/an을 정한다는 것, 시험 단골 포인트예요." },
+
+  /* ─ 관사: 한정 (내가 ~한 그 …) ─ */
+  { q: "「내가 보낸 그 편지는 그의 생일 일주일 후에 도착했다.」 올바른 문장은?",
+    choices: ["The letter I sent arrived a week after his birthday.", "A letter I sent arrived a week after his birthday.", "The letter I sent arrived the week after his birthday.", "A letter I sent arrived the week after his birthday."], answer: "The letter I sent arrived a week after his birthday.",
+    exp: "「내가 보낸 <b>그 편지</b>」처럼 뒤에서 꾸며주는 말(I sent)로 정해진 명사에는 <b>The</b>! 그리고 「일주일 후」는 정해진 주가 아니라 기간이니까 <b>a week</b>. The letter … a week — 조합을 기억하세요." },
+  { q: "「내가 산 그 신발은 매우 비쌌다.」 올바른 문장은?",
+    choices: ["The shoes I bought were very expensive.", "A shoes I bought were very expensive.", "Shoes I bought was very expensive.", "The shoes I bought was very expensive."], answer: "The shoes I bought were very expensive.",
+    exp: "「내가 산 그 신발」 — I bought가 꾸며줘서 특정한 신발이니 <b>The shoes</b>! shoes는 복수라서 동사도 <b>were</b>를 써야 해요. (was를 고르면 수 일치에서 틀려요!)" }
 ];
 
 /* ══════ 진행 로직 ══════ */
-let QUESTIONS = [];
-let student = "";
-let answered = {};   // idx -> {correct:bool, your:string, yourMark:string}
-let startTime = 0;
+var studentName = "";
+var current = 0;
+var correctCount = 0;
+var wrongNumbers = [];
+var answersLog = [];
+var startTime = 0;
 
-const $ = s=>document.querySelector(s);
+var nameInput = document.getElementById("name-input");
+var startBtn = document.getElementById("start-btn");
 
-/* ---- 균형 셔플: 정답 위치가 한쪽에 몰리지 않게 ---- */
-function shuffleChoices(){
-  const mc = QUESTIONS.map((q,i)=>({q,i})).filter(o=>o.q.type==='mc' && !o.q.noshuffle);
-  const n = mc.length, k = 5;
-  let pool=[]; for(let p=0;p<k;p++) for(let c=0;c<Math.floor(n/k);c++) pool.push(p);
-  let extra=n%k, pos=[0,1,2,3,4];
-  for(let e=0;e<extra;e++){ const r=Math.floor(Math.random()*pos.length); pool.push(pos.splice(r,1)[0]); }
-  for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}
-  mc.forEach((o,idx)=>{
-    const q=o.q, ans=q.choices[q.answer], target=Math.min(pool[idx], q.choices.length-1);
-    let arr=q.choices.slice();
-    for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}
-    const cur=arr.indexOf(ans);[arr[cur],arr[target]]=[arr[target],arr[cur]];
-    q.choices=arr; q.answer=target;
-  });
-}
+nameInput.addEventListener("input", function () {
+  startBtn.disabled = nameInput.value.trim().length === 0;
+});
 
-function startQuiz(){
-  student = $('#nm').value.trim();
-  if(!student) return;
+startBtn.addEventListener("click", function () {
+  studentName = nameInput.value.trim();
+  if (!studentName) return;
   startTime = Date.now();
-  QUESTIONS = JSON.parse(JSON.stringify(RAW));
-  shuffleChoices();
-  $('#start').classList.add('hide');
-  $('#quizArea').classList.remove('hide');
-  renderQuiz();
-  updateProg();
-  window.scrollTo({top:0});
-}
+  document.getElementById("start-card").classList.add("hidden");
+  document.getElementById("quiz-card").classList.remove("hidden");
+  showQuestion();
+});
 
-const CIRC=['①','②','③','④','⑤'];
-function renderQuiz(){
-  const box=$('#quiz'); box.innerHTML='';
-  QUESTIONS.forEach((q,i)=>{
-    const card=document.createElement('div');
-    card.className='card q'; card.id='q'+i;
-    let h='<div class="qhead"><div class="qno">'+q.num+'</div>'+
-          '<div class="qorigin">'+q.origin+'</div></div>';
-    if(q.passage) h+='<div class="passage">'+q.passage+'</div>';
-    h+='<div class="prompt">'+q.prompt+'</div>';
-    h+='<div class="choices" id="ch'+i+'">';
-    q.choices.forEach((c,ci)=>{
-      h+='<div class="choice" data-q="'+i+'" data-c="'+ci+'"><span class="ix">'+CIRC[ci]+'</span><span>'+c+'</span></div>';
-    });
-    h+='</div><div class="hintkey">숫자키 1~5로도 선택할 수 있어요.</div>';
-    h+='<div class="expl hide" id="ex'+i+'"></div>';
-    card.innerHTML=h; box.appendChild(card);
-  });
-  box.querySelectorAll('.choice').forEach(el=>{
-    el.addEventListener('click',()=>pickMC(+el.dataset.q,+el.dataset.c));
-  });
-}
-
-function pickMC(qi,ci){
-  if(answered.hasOwnProperty(qi)) return;
-  const q=QUESTIONS[qi];
-  const correct = (ci===q.answer);
-  answered[qi]={correct, your:q.choices[ci], yourMark:CIRC[ci]};
-  const wrap=$('#ch'+qi);
-  wrap.querySelectorAll('.choice').forEach((el,idx)=>{
-    el.classList.add('lock');
-    if(idx===q.answer) el.classList.add('correct');
-    if(idx===ci && !correct) el.classList.add('wrong');
-    if(idx===ci) el.classList.add('picked');
-  });
-  afterAnswer(qi);
-}
-
-function afterAnswer(qi){
-  updateProg();
-  const done=Object.keys(answered).length;
-  if(done===QUESTIONS.length){
-    $('#finishBtn').classList.remove('hide');
-    setTimeout(()=>$('#finishBtn').scrollIntoView({behavior:'smooth',block:'center'}),250);
-  } else {
-    setTimeout(()=>{
-      for(let n=qi+1;n<QUESTIONS.length;n++){ if(!answered.hasOwnProperty(n)){ $('#q'+n).scrollIntoView({behavior:'smooth',block:'start'}); break; } }
-    },250);
+function shuffle(arr) {
+  var a = arr.slice();
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = a[i]; a[i] = a[j]; a[j] = t;
   }
+  return a;
 }
 
-function updateProg(){
-  const done=Object.keys(answered).length, tot=QUESTIONS.length;
-  $('#progfill').style.width=(done/tot*100)+'%';
-  $('#progtxt').textContent=done+' / '+tot+' 완료';
+var CIRCLED = ["①", "②", "③", "④", "⑤"];
+
+function showQuestion() {
+  var q = QUESTIONS[current];
+  document.getElementById("progress").textContent = (current + 1) + " / " + QUESTIONS.length;
+  document.getElementById("qtext").innerHTML = "Q" + (current + 1) + ". " + q.q;
+  var box = document.getElementById("choices");
+  box.innerHTML = "";
+  shuffle(q.choices).forEach(function (c, i) {
+    var b = document.createElement("button");
+    b.className = "choice";
+    b.innerHTML = '<span class="num">' + CIRCLED[i] + "</span>" + c;
+    b.addEventListener("click", function () { pick(c); });
+    box.appendChild(b);
+  });
 }
 
-document.addEventListener('keydown',e=>{
-  if($('#quizArea').classList.contains('hide')) return;
-  if(/^[1-5]$/.test(e.key)){
-    for(let i=0;i<QUESTIONS.length;i++){
-      if(!answered.hasOwnProperty(i)){
-        const r=$('#q'+i).getBoundingClientRect();
-        if(r.top> -80 && r.top < window.innerHeight*0.7){
-          const ci=+e.key-1; if(ci<QUESTIONS[i].choices.length){ pickMC(i,ci); }
-          break;
-        }
-      }
-    }
+document.addEventListener("keydown", function (e) {
+  if (document.getElementById("quiz-card").classList.contains("hidden")) return;
+  var n = parseInt(e.key, 10);
+  if (n >= 1 && n <= 5) {
+    var btns = document.querySelectorAll("#choices .choice");
+    if (btns[n - 1]) btns[n - 1].click();
   }
 });
 
-function revealAll(){
-  let score=0;
-  QUESTIONS.forEach((q,i)=>{
-    const a=answered[i]; if(a&&a.correct) score++;
-    const ex=$('#ex'+i); ex.classList.remove('hide');
-    const good = a&&a.correct;
-    ex.className='expl '+(good?'good':'bad');
-    let h='<div class="vh">'+(good?'⭕ 정답!':'❌ 다시 확인해요')+'</div>';
-    h+='<div>'+q.explain+'</div>';
-    ex.innerHTML=h;
-  });
-  showResult(score);
+var locked = false;
+function pick(choice) {
+  if (locked) return; locked = true;
+  var q = QUESTIONS[current];
+  var ok = choice === q.answer;
+  if (ok) correctCount++;
+  else wrongNumbers.push(current + 1);
+  answersLog.push({ no: current + 1, ok: ok, chosen: choice, answer: q.answer });
+  setTimeout(function () {
+    locked = false;
+    current++;
+    if (current < QUESTIONS.length) showQuestion();
+    else showResult();
+  }, 250);
 }
-function escapeHtml(s){return s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
 
-function showResult(score){
-  const tot=QUESTIONS.length;
-  const wrongList=[];
-  QUESTIONS.forEach((q,i)=>{const a=answered[i]; if(!(a&&a.correct)) wrongList.push(+q.num);});
-  const dt=new Date(); const ds=dt.getFullYear()+'.'+String(dt.getMonth()+1).padStart(2,'0')+'.'+String(dt.getDate()).padStart(2,'0');
-  let msg='[영핏 지나티처 · 오답 클리닉 결과]\n';
-  msg+='학생: '+(student||'-')+'\n';
-  msg+='날짜: '+ds+'\n';
-  msg+='범위: 초6 영어 변형문제 (원본 18·19·20번)\n';
-  msg+='점수: '+score+' / '+tot+'\n';
-  msg+=(wrongList.length? '아직 헷갈린 문항: '+wrongList.join(', ')+'번\n' : '전부 정답! 안내문·도표·지칭 완벽해요 👏\n');
-  msg+='— 영핏 지나티처';
+function showResult() {
+  document.getElementById("quiz-card").classList.add("hidden");
+  document.getElementById("result-card").classList.remove("hidden");
+  document.getElementById("score-line").textContent = correctCount + " / " + QUESTIONS.length;
 
-  const detail = QUESTIONS.map((q,i)=>{
-    const a=answered[i]||{};
-    return { no:+q.num, ok:!!a.correct,
-      chosen:(a.yourMark||'')+' '+String(a.your||'').replace(/<[^>]*>/g,'').slice(0,40),
-      answer:CIRC[q.answer]+' '+String(q.choices[q.answer]).replace(/<[^>]*>/g,'').slice(0,40) };
+  var expBox = document.getElementById("explanations");
+  QUESTIONS.forEach(function (q, i) {
+    var log = answersLog[i];
+    var d = document.createElement("div");
+    d.className = "exp" + (log.ok ? "" : " wrong");
+    d.innerHTML = "<b>Q" + (i + 1) + ". " + (log.ok ? "정답!" : "오답 (내 답: " + log.chosen + " → 정답: " + q.answer + ")") + "</b><br>" + q.exp;
+    expBox.appendChild(d);
   });
-
-  const r=$('#result'); r.classList.remove('hide');
-  r.innerHTML='<h2>🎉 '+escapeHtml(student||'학생')+' 학생, 수고했어요!</h2>'+
-    '<div class="scorebig">'+score+' / '+tot+'</div>'+
-    '<div id="submit-status"></div>'+
-    '<div class="scoresub">결과는 자동 전송돼요. 아래 메시지도 복사해서 <b>지나티처에게 카카오톡</b>으로 보내주세요!</div>'+
-    '<div class="kakbox" id="kak">'+escapeHtml(msg)+'</div>'+
-    '<button class="btn" id="copyBtn">📋 카카오톡 메시지 복사하기</button>'+
-    '<div style="height:10px"></div>'+
-    '<button class="btn ghost" id="againBtn">🔄 다시 풀기 (보기 순서 새로 섞임)</button>';
-  $('#copyBtn').addEventListener('click',()=>copyMsg(msg));
-  $('#againBtn').addEventListener('click',()=>location.reload());
-  r.scrollIntoView({behavior:'smooth',block:'start'});
 
   engfitSubmitWithStatus({
-    quizId:'clinic-hanjimin-0706',
-    quizTitle:'한지민 오답 클리닉 7/6 (18·19·20 변형)',
-    student:student,
-    score:score,
-    total:tot,
-    wrong:wrongList,
-    durationSec:Math.round((Date.now()-startTime)/1000),
-    detail:detail
+    quizId: "clinic-parkjiyul-0706",
+    quizTitle: "박지율 오답 클리닉 (관사·동사 과거형)",
+    student: studentName,
+    score: correctCount,
+    total: QUESTIONS.length,
+    wrong: wrongNumbers,
+    durationSec: Math.round((Date.now() - startTime) / 1000),
+    detail: answersLog
   });
 }
 
-function copyMsg(msg){
-  const done=()=>toast('복사됐어요! 카카오톡에 붙여넣기 하세요 💬');
-  if(navigator.clipboard&&navigator.clipboard.writeText){
-    navigator.clipboard.writeText(msg).then(done).catch(()=>fallbackCopy(msg,done));
-  } else fallbackCopy(msg,done);
-}
-function fallbackCopy(msg,cb){
-  const ta=document.createElement('textarea'); ta.value=msg; document.body.appendChild(ta); ta.select();
-  try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); cb();
-}
-let toT;
-function toast(t){const el=$('#toast'); el.textContent=t; el.classList.add('show'); clearTimeout(toT);
-  toT=setTimeout(()=>el.classList.remove('show'),2600);}
-
-$('#nm').addEventListener('input',()=>{ $('#startBtn').disabled = !$('#nm').value.trim(); });
-$('#nm').addEventListener('keydown',e=>{ if(e.key==='Enter' && $('#nm').value.trim()) startQuiz(); });
-$('#startBtn').addEventListener('click',startQuiz);
-$('#finishBtn').addEventListener('click',()=>{ $('#finishBtn').classList.add('hide'); revealAll(); });
+document.getElementById("kakao-btn").addEventListener("click", function () {
+  var msg = "[영핏 오답 클리닉 결과]\n학생: " + studentName +
+            "\n퀴즈: 박지율 오답 클리닉 (관사·동사 과거형)" +
+            "\n점수: " + correctCount + "/" + QUESTIONS.length +
+            "\n틀린 문항: " + (wrongNumbers.length ? wrongNumbers.join(", ") : "없음") +
+            "\n제공: 영핏 지나티처";
+  navigator.clipboard.writeText(msg).then(function () {
+    document.getElementById("kakao-btn").textContent = "복사 완료! 카톡에 붙여넣기 하세요 ✓";
+  }).catch(function () {
+    prompt("아래 내용을 길게 눌러 복사하세요", msg);
+  });
+});
 </script>
 </body>
 </html>
